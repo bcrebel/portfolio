@@ -1,0 +1,38 @@
+---
+import Detail from '../layouts/Detail.astro';
+import { Image } from 'astro:assets';
+import { ProjectCarousel } from '@/components/ui/projectcarousel';
+import vertex from '../../public/vertex_clip.gif';
+import tiles from '../../public/tiles_clip.gif';
+import nytWorkLg from '../../public/nyt-work-lg.png';
+import wordle from '../../public/wordle.gif';
+---
+
+<Detail>
+    <h2>New York Times Games</h2>
+    <hr class="mt-4">
+	<section>
+        <h4>Game Development</h4>
+        <Image src={vertex} alt="Vertex clip" class="mt-4 w-full md:w-1/2" />
+        <h5>Vertex</h5>
+        <a class="italic" href="https://open.nytimes.com/connecting-the-dots-on-game-development-a28214b513bf">See Times Open article on development process</a>
+        <Image src={tiles} alt="Tiles clip" class="mt-8 w-1/2 md:w-1/3" />
+        <h5>Tiles</h5>
+	</section>
+    <section>
+        <h4>Features</h4>
+        <ProjectCarousel client:load />
+        <h5>Mini Crossword Leaderboards</h5>
+    <Image src={nytWorkLg} alt="Games projects" class="mt-8 w-full" />
+    <h5>News App PlayTab (Webview)</h5>
+    <ul class="pl-5">
+        <li class="list-disc">Design System/Component Library</li>
+    </ul>
+    <Image src={wordle} alt="1000th Wordle Celebration" class="w-1/2 md:w-1/3" />
+    <h5>1000th Wordle Celebration</h5>
+</section>
+
+</Detail>
+<style>
+
+</style>
