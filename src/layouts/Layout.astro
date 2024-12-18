@@ -57,8 +57,13 @@ import bluesky from '../../public/bluesky.svg';
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		-webkit-font-smoothing: antialiased;
 	}
 
+	footer {
+		@apply bg-gradient-to-t from-green to-black;
+	}
+	
 	footer ul {
 		@apply flex justify-center items-center space-x-4;
 	}
@@ -85,5 +90,10 @@ import bluesky from '../../public/bluesky.svg';
 
 	hr {
 		@apply w-full mt-10 h-[1px] mx-auto my-auto bg-gray-100 border-0;
+	}
+
+	.gradient-text {
+		@apply font-display bg-gradient-to-r from-green via-lime to-purple inline-block text-transparent bg-clip-text;
+
 	}
 </style>

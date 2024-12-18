@@ -11,17 +11,24 @@ import fabfixe from '../../public/fabfixe.png';
 
 <Layout>
 	<section class="text-center flex flex-col md:flex-row md:text-left">
-		<div class="basis-1/2">
+		<div class="basis-1/2 md:order-2">
 			<Image src={me} alt="Carron White selfie" class="mt-4 mx-auto" />
 		</div>
-		<div class="basis-1/2">
-			<h1 class="text-4xl leading-snug lg:text-5xl">Hi, I'm <span class="decoration-4 underline-offset-8 underline decoration-lime">Carron</span>, welcome to my home on the web!</h1>
-			<h3 class="text-xl mt-2 lg:text-xl text-white font-base leading-normal">
-				I help startups turn bold ideas into functional MVPs that lay the groundwork for scale. I build scalable web applications, craft robust design systems, and develop clear, effective documentation strategies that keep teams aligned. <br />*New Orleans based and powered by <span class="text-lime">okra</span></h3>
-			<p class="font-sans mt-6"><a class="fancy-link" href="mailto:carronwhite@gmail.com">Let's Chat</a></p>
+		<div class="basis-1/2 md:order-1">
+			<div class="lg:absolute lg:w-[46%] 2xl:w-[30%]">
+				<h1 class="text-4xl leading-tight xl:text-5xl lg:leading-tight">Hi, I'm <span class="decoration-4 underline-offset-8 underline decoration-lime">Carron</span>, <br />welcome to my home on the web!</h1>
+				<h3 class="text-l mt-2 text-white font-base leading-normal">
+				I help startups turn bold ideas into functional MVPs that lay the groundwork for scale. I build scalable web applications, craft robust design systems, and develop clear, effective documentation strategies that keep teams aligned. I’m always experimenting with new technologies, pushing what’s possible, and sharpening my skills to deliver better results.
+					<br />
+					<span class="gradient-text mt-2">&#8212; New Orleans based</span>
+					<br/>
+					<span class="gradient-text">&#8212; Powered by okra</span>
+				</h3>
+				<p class="font-sans mt-6"><a class="fancy-link" href="mailto:carronwhite@gmail.com">Let's Chat</a></p>	
+			</div>
 		</div>
 	</section>
-	<hr class="w-full mt-40 md:mt-20 h-[1px] mx-auto my-auto bg-gray-100 border-0">
+	<hr class="w-full mt-40 h-[1px] mx-auto my-auto bg-gray-100 border-0">
 
 	<section class="text-center md:text-left">
 		<div>

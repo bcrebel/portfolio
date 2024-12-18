@@ -18,6 +18,7 @@ export default {
     			black: '#101110',
     			lime: '#E5F887',
 				green: '#249A6B',
+				purple: "#A259FF",
     		},
     		borderRadius: {
     			lg: 'var(--radius)',
