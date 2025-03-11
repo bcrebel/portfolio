@@ -7,6 +7,7 @@ import hearstWork from '../../public/hearst-work.png';
 import remoteLA from '../../public/remote-la.png';
 import pt from '../../public/pt.png';
 import fabfixe from '../../public/fabfixe.png';
+import future from '../../public/future.png';
 ---
 
 <Layout>
@@ -17,7 +18,7 @@ import fabfixe from '../../public/fabfixe.png';
 		<div class="basis-1/2 md:order-1">
 			<div class="lg:absolute lg:w-[46%] 2xl:w-[30%]">
 				<h1 class="text-4xl leading-tight xl:text-5xl lg:leading-tight">Hi, I'm <span class="decoration-4 underline-offset-8 underline decoration-lime">Carron</span>, <br />welcome to my home on the web!</h1>
-				<h3 class="text-l mt-2 text-white font-base leading-normal">
+				<h3 class="text-l mt-2 text-white font-base leading-normal shadow-sm">
 				I help startups turn bold ideas into functional MVPs that lay the groundwork for scale. I build scalable web applications, craft robust design systems, and develop clear, effective documentation strategies that keep teams aligned. I’m always experimenting with new technologies, pushing what’s possible, and sharpening my skills to deliver better results.
 					<br />
 					<span class="gradient-text mt-2">&#8212; New Orleans based</span>
@@ -55,7 +56,7 @@ import fabfixe from '../../public/fabfixe.png';
 	<section class="text-left">
 		<h2 class="mt-10">Work</h2>
 		<h4 class="mt-2">Professional</h4>
-		<ul class="md:grid grid-rows-1 grid-cols-2 gap-6 mt-8">
+		<ul class="md:grid grid-rows-1 grid-cols-2 gap-6 mt-4">
 			<li>
 				<a href="/portfolio/nyt/">
 					<Image src={nytWork} alt="Games projects" class="mt-4 w-full" />
@@ -68,7 +69,13 @@ import fabfixe from '../../public/fabfixe.png';
 			</li>
 		</ul>
 		<h4 class="mt-10">Personal Projects/Experiments</h4>
-		<ul class="mt-8 md:grid grid-rows-1 grid-cols-2 gap-6">
+		<ul class="mt-4 md:grid grid-rows-1 grid-cols-2 gap-6">
+			<li>
+				<a href="/portfolio/future">
+					<Image src={future} alt="Future screenshot" class="mt-4 w-full" />
+					<h5>Future</h5>
+				</a>
+			</li>
 			<li>
 				<a href="/portfolio/remote/"><Image src={remoteLA} alt="Remote LA" class="mt-4 w-full" /></a>
 				<h5>Remote from Louisiana</h5>
