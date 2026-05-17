@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import NewLayout from '../layouts/NewLayout.astro';
 import { Image } from 'astro:assets';
 import me from '../../public/me.png';
 import nytWork from '../../public/nyt-work-lg.png';
@@ -8,95 +8,117 @@ import remoteLA from '../../public/remote-la.png';
 import pt from '../../public/pt.png';
 import fabfixe from '../../public/fabfixe.png';
 import future from '../../public/future.png';
+import CanvasBackground from '../components/new/CanvasBackground.astro';
+import Navbar from '../components/new/Navbar.astro';
+import Hero from '../components/new/Hero.astro';
+import SectionHeader from '../components/new/SectionHeader.astro';
+import Card from '../components/new/Card.astro';
+import SocialLinks from '../components/new/SocialLinks.astro';
 ---
 
-<Layout>
-	<section class="text-center flex flex-col md:flex-row md:text-left">
-		<div class="basis-1/2 md:order-2">
-			<Image src={me} alt="Carron White selfie" class="mt-4 mx-auto" />
-		</div>
-		<div class="basis-1/2 md:order-1">
-			<div class="lg:absolute lg:w-[46%] 2xl:w-[30%]">
-				<h1 class="text-4xl leading-tight xl:text-5xl lg:leading-tight">Hi, I'm <span class="decoration-4 underline-offset-8 underline decoration-lime">Carron</span>, <br />welcome to my home on the web!</h1>
-				<h3 class="text-l mt-2 text-white font-base leading-normal shadow-sm">
-				I help startups turn bold ideas into functional MVPs that lay the groundwork for scale. I build scalable web applications, craft robust design systems, and develop clear, effective documentation strategies that keep teams aligned. I’m always experimenting with new technologies, pushing what’s possible, and sharpening my skills to deliver better results.
-					<br />
-					<span class="gradient-text mt-2">&#8212; New Orleans based</span>
-					<br/>
-					<span class="gradient-text">&#8212; Powered by okra</span>
-				</h3>
-				<p class="font-sans mt-6"><a class="fancy-link" href="mailto:carronwhite@gmail.com">Let's Chat</a></p>	
+<NewLayout>
+	<CanvasBackground />
+	<div class="content-wrapper">
+		<Navbar />
+		
+		<Hero
+			firstLine="Hi, I'm"
+			secondHighlight="Carron!"
+			bullets={[
+				'Full‑stack developer focused on React/TypeScript, API design, and data modeling.',
+				'I enable robust design systems with scalable components, tooling, and developer‑first documentation.',
+				'I help startups transform bold ideas into functional, scalable MVPs.',
+				"New Orleans based&nbsp;—&nbsp;<span class='okra-text'>powered by okra.</span>"
+			]}
+			ctaHref="#projects"
+			ctaText="View My Work"
+		/>
+
+		<section id="skills">
+			<div class="container">
+				<SectionHeader label="Skills" title="Skills" />
+				<div class="tags">
+					<span class="tag">React</span>
+					<span class="tag">TypeScript</span>
+					<span class="tag">Node.js</span>
+					<span class="tag">Express.js</span>
+					<span class="tag">GraphQL</span>
+					<span class="tag">Next.js</span>
+					<span class="tag">Sass</span>
+					<span class="tag">TailwindCSS</span>
+					<span class="tag">MongoDB</span>
+					<span class="tag">PostgreSQL</span>
+					<span class="tag">Storybook</span>
+				</div>
 			</div>
-		</div>
-	</section>
-	<hr class="w-full mt-40 h-[1px] mx-auto my-auto bg-gray-100 border-0">
+		</section>
 
-	<section class="text-center md:text-left">
-		<div>
-			<h2 class="font-display text-3xl mt-10">Skills</h2>
-			<ul class="text-xl mt-2 md:grid grid-cols-2 grid-rows-1">
-				<div>
-					<li>React</li>
-					<li>Typescript</li>
-					<li>Node.js</li>
-					<li>Express.js</li>
-					<li>GraphQL</li>
-				</div>
-				<div>
-					<li>Next.js</li>
-					<li>Sass</li>
-					<li>TailwindCSS</li>
-					<li>MongoDB</li>
-					<li>Storybook</li>
-				</div>
-			</ul>
-		</div>
-		<hr class="w-full mt-10 h-[1px] mx-auto my-auto bg-gray-100 border-0">
-	</section>
-	<section class="text-left">
-		<h2 class="mt-10">Work</h2>
-		<h4 class="mt-2">Professional</h4>
-		<ul class="md:grid grid-rows-1 grid-cols-2 gap-6 mt-4">
-			<li>
-				<a href="/portfolio/nyt/">
-					<Image src={nytWork} alt="Games projects" class="mt-4 w-full" />
-				</a>
-				<h5>New York Times Games</h5>
-			</li>
-			<li>
-				<a href="/portfolio/hearst/"><Image src={hearstWork} alt="Hearst projects" class="mt-4 w-full" /></a>
-				<h5>Hearst Digital Media</h5>
-			</li>
-		</ul>
-		<h4 class="mt-10">Personal Projects/Experiments</h4>
-		<ul class="mt-4 md:grid grid-rows-1 grid-cols-2 gap-6">
-			<li>
-				<a href="/portfolio/future">
-					<Image src={future} alt="Future screenshot" class="mt-4 w-full" />
-					<h5>Future</h5>
-				</a>
-			</li>
-			<li>
-				<a href="/portfolio/remote/"><Image src={remoteLA} alt="Remote LA" class="mt-4 w-full" /></a>
-				<h5>Remote from Louisiana</h5>
-				
-			</li>
-			<li>
-				<a href="/portfolio/fabfixe/"><Image src={fabfixe} alt="FabFixe" class="mt-4 w-full" /></a>
-				<h5>Fabfixe</h5>
-			</li>
-			<li>
-				<a href="/portfolio/pt/">
-					<Image src={pt} alt="PrettyTendr" class="mt-4 w-full" />
-				</a>
-				<h5>PrettyTendr</h5>
-			</li>
-		</ul>
-	</section>
+		<section id="work">
+			<div class="container">
+				<SectionHeader label="Work" title="Where I've Worked" />
+				<Card href="/portfolio/nyt/" title="New York Times Games">
+					<div class="description">Selected work on NYT Games experiences.</div>
+					<div style="margin-top: 20px;">
+						<Image src={nytWork} alt="New York Times Games projects" />
+					</div>
+				</Card>
+				<Card href="/portfolio/hearst/" title="Hearst Digital Media">
+					<div class="description">Selected work across Hearst Digital Media properties.</div>
+					<div style="margin-top: 20px;">
+						<Image src={hearstWork} alt="Hearst Digital Media projects" />
+					</div>
+				</Card>
+			</div>
+		</section>
 
-</Layout>
-<style>
-	li {
-		@apply mt-2 relative;
-	}
-</style>
+		<section id="projects">
+			<div class="container">
+				<SectionHeader label="Projects" title="Personal Projects & Experiments" />
+				<div class="grid-2">
+					<Card href="/portfolio/future" title="Future">
+						<div class="description">An experiment exploring future-focused product concepts.</div>
+						<div style="margin-top: 20px;">
+							<Image src={future} alt="Future screenshot" />
+						</div>
+					</Card>
+					<Card href="/portfolio/remote/" title="Remote from Louisiana">
+						<div class="description">Remote community and resources from Louisiana.</div>
+						<div style="margin-top: 20px;">
+							<Image src={remoteLA} alt="Remote LA" />
+						</div>
+					</Card>
+					<Card href="/portfolio/fabfixe/" title="Fabfixe">
+						<div class="description">A small product experiment and brand concept.</div>
+						<div style="margin-top: 20px;">
+							<Image src={fabfixe} alt="FabFixe" />
+						</div>
+					</Card>
+					<Card href="/portfolio/pt/" title="PrettyTendr">
+						<div class="description">Visual design and prototyping explorations.</div>
+						<div style="margin-top: 20px;">
+							<Image src={pt} alt="PrettyTendr" />
+						</div>
+					</Card>
+				</div>
+			</div>
+		</section>
+
+		<section id="connect">
+			<div class="container">
+				<SectionHeader label="Connect" title="Let's Work Together" />
+				<SocialLinks
+					items={[
+						{ href: 'https://github.com/bcrebel', label: 'GitHub' },
+						{ href: 'https://www.linkedin.com/in/carronwhite/', label: 'LinkedIn' },
+						{ href: 'https://bsky.app/profile/carronwhite.bsky.social', label: 'Bluesky' },
+						{ href: 'mailto:carronwhite@gmail.com', label: 'Email' },
+					]}
+				/>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container">Designed & developed with intention © 2025</div>
+		</footer>
+	</div>
+</NewLayout>

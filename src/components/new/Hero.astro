@@ -1,0 +1,63 @@
+---
+interface Props {
+	firstLine?: string;
+	secondPrefix?: string;
+	secondHighlight?: string;
+	titleBefore?: string;
+	highlight?: string;
+	titleAfter?: string;
+	description?: string;
+	bullets?: string[];
+	ctaHref?: string;
+	ctaText?: string;
+}
+const {
+	firstLine,
+	secondPrefix,
+	secondHighlight,
+	titleBefore = "Hi, I'm",
+	highlight = 'Carron',
+	titleAfter = '',
+	description = 'I help startups turn bold ideas into functional MVPs and scalable systems.',
+	bullets = [],
+	ctaHref = '#projects',
+	ctaText = 'View My Work',
+}: Props = Astro.props;
+---
+
+<div class="hero">
+	<div class="hero-content container">
+		<div class="hero-grid">
+			<div class="hero-left">
+				<h1>
+					{firstLine ? (
+						<>
+							{firstLine}<br />
+					{secondPrefix ? (<>{secondPrefix}{' '}</>) : null}<span class="highlight">{secondHighlight}</span>
+						</>
+					) : (
+						<>
+							{titleBefore} <span class="highlight">{highlight}</span>{titleAfter && (<><br />{titleAfter}</>)}
+						</>
+					)}
+				</h1>
+			</div>
+			<div class="hero-right">
+				{bullets.length > 0 ? (
+					<ul class="hero-list">
+						{bullets.map((item) => (<li set:html={item} />))}
+					</ul>
+				) : (
+					description && <p set:html={description} />
+				)}
+			</div>
+		</div>
+		{ctaText && (
+			<div class="hero-cta-row">
+				<a href={ctaHref} class="hero-cta">{ctaText}</a>
+			</div>
+		)}
+	</div>
+	</div>
+
+

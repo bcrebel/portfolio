@@ -1,0 +1,15 @@
+---
+export interface SocialItem {
+	href: string;
+	label: string;
+}
+const { items = [] }: { items?: SocialItem[] } = Astro.props;
+---
+
+<div class="social-links">
+	{items.map((item) => (
+		<a href={item.href} target="_blank" rel="noopener noreferrer"><span>{item.label}</span></a>
+	))}
+</div>
+
+
