@@ -283,6 +283,7 @@ section {
 
 #work .card {
 	padding: 40px;
+	overflow: visible;
 }
 
 #work .work-item {
@@ -330,6 +331,159 @@ section {
 	color: rgba(255, 255, 255, 0.82);
 }
 
+#work .work-item-nyt + .nyt-hover-popover {
+	--nyt-popover-pad: 14px;
+	position: absolute;
+	left: 50%;
+	width: min(980px, calc(100% - 48px));
+	transform: translateX(-50%) translateY(8px) scale(0.98);
+	bottom: calc(100% + 14px);
+	display: flex;
+	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease, transform 0.35s ease;
+	overflow: hidden;
+	padding: 10px 25px;
+	border-radius: 18px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	background: rgba(12, 12, 12, 0.96);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-hover-viewport {
+	position: relative;
+	overflow: hidden;
+	border-radius: 14px;
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-hover-track {
+	display: flex;
+	gap: 18px;
+	width: max-content;
+	padding: 4px;
+	animation: nyt-marquee-left 44s linear infinite;
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-hover-viewport::before,
+#work .work-item-nyt + .nyt-hover-popover .nyt-hover-viewport::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 40px;
+	z-index: 2;
+	pointer-events: none;
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-hover-viewport::before {
+	left: 0;
+	background: linear-gradient(
+		to right,
+		rgba(12, 12, 12, 0.98) 0%,
+		rgba(12, 12, 12, 0.9) 12%,
+		rgba(12, 12, 12, 0.74) 30%,
+		rgba(12, 12, 12, 0.52) 50%,
+		rgba(12, 12, 12, 0.3) 70%,
+		rgba(12, 12, 12, 0.08) 88%,
+		rgba(12, 12, 12, 0) 96%,
+		transparent 100%
+	);
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-hover-viewport::after {
+	right: 0;
+	background: linear-gradient(
+		to left,
+		rgba(12, 12, 12, 0.98) 0%,
+		rgba(12, 12, 12, 0.9) 12%,
+		rgba(12, 12, 12, 0.74) 30%,
+		rgba(12, 12, 12, 0.52) 50%,
+		rgba(12, 12, 12, 0.3) 70%,
+		rgba(12, 12, 12, 0.08) 88%,
+		rgba(12, 12, 12, 0) 96%,
+		transparent 100%
+	);
+}
+
+#work .work-item-nyt + .nyt-hover-popover img {
+	width: 280px;
+	height: 190px;
+	object-fit: cover;
+	flex: 0 0 auto;
+	border-radius: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-slide-frame {
+	display: block;
+	width: 280px;
+	height: 190px;
+	overflow: hidden;
+	flex: 0 0 auto;
+	border-radius: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard img {
+	width: 100%;
+	height: auto;
+	max-width: none;
+	border: none;
+	border-radius: 0;
+	object-fit: cover;
+	object-position: top center;
+	transform: scale(1.72);
+	transform-origin: top center;
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard-1 img {
+	transform: scale(1.78);
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard-2 img {
+	transform: scale(2.02);
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard-3 img {
+	transform: scale(1.8);
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-slide-tiles img {
+	width: 100%;
+	height: auto;
+	max-width: none;
+	border: none;
+	border-radius: 0;
+	transform: scale(1.18) translateY(-18%);
+	transform-origin: top center;
+}
+
+#work .work-item-nyt + .nyt-hover-popover .nyt-slide-wordle img {
+	width: 100%;
+	height: auto;
+	max-width: none;
+	border: none;
+	border-radius: 0;
+	transform: scale(1.08) translateY(-16%);
+	transform-origin: top center;
+}
+
+#work .card:hover .work-item-nyt + .nyt-hover-popover,
+#work .card:focus-within .work-item-nyt + .nyt-hover-popover {
+	opacity: 1;
+	transform: translateX(-50%) translateY(0) scale(1);
+}
+
+@keyframes nyt-marquee-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-50% - 9px));
+	}
+}
+
 @media (max-width: 1024px) {
 	#work .work-item {
 		grid-template-columns: 1fr;
@@ -338,6 +492,45 @@ section {
 
 	#work .work-item-top {
 		flex-wrap: wrap;
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover {
+		width: calc(100% - 36px);
+		bottom: calc(100% + 10px);
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover img {
+		width: 220px;
+		height: 150px;
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover .nyt-slide-frame {
+		width: 220px;
+		height: 150px;
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard img {
+		transform: scale(1.62);
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard-1 img {
+		transform: scale(1.68);
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard-2 img {
+		transform: scale(1.88);
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover .nyt-slide-leaderboard-3 img {
+		transform: scale(1.7);
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover .nyt-slide-tiles img {
+		transform: scale(1.16) translateY(-16%);
+	}
+
+	#work .work-item-nyt + .nyt-hover-popover .nyt-slide-wordle img {
+		transform: scale(1.06) translateY(-14%);
 	}
 }
 
