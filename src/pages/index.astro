@@ -2,8 +2,6 @@
 import NewLayout from '../layouts/NewLayout.astro';
 import { Image } from 'astro:assets';
 import me from '../../public/me.png';
-import nytWork from '../../public/nyt-work-lg.png';
-import hearstWork from '../../public/hearst-work.png';
 import remoteLA from '../../public/remote-la.png';
 import pt from '../../public/pt.png';
 import fabfixe from '../../public/fabfixe.png';
@@ -22,21 +20,67 @@ import SocialLinks from '../components/new/SocialLinks.astro';
 		<Navbar />
 		
 		<Hero
-			firstLine="Hi, I'm"
-			secondHighlight="Carron!"
-			bullets={[
-				'Full‑stack developer focused on React/TypeScript, API design, and data modeling.',
-				'I enable robust design systems with scalable components, tooling, and developer‑first documentation.',
-				'I help startups transform bold ideas into functional, scalable MVPs.',
-				"New Orleans based&nbsp;—&nbsp;<span class='okra-text'>powered by okra.</span>"
-			]}
-			ctaHref="#projects"
+			greeting="Hi, I'm Carron."
+			title="I'm a senior full-stack developer and solutions architect."
+			description="I have been sharing my need for speed since 1998 when I started hacking on the internet. I help businesses build elegant, robust and scalable software with the best tools."
+			ctaHref="#work"
 			ctaText="View My Work"
 		/>
 
+		<section id="work">
+			<div class="container">
+				<SectionHeader label="Work" title="Where I've Worked" />
+				<Card href="#">
+					<div class="work-item">
+						<div class="work-item-left">
+							<h3>Mighty Acorn Digital</h3>
+							<p class="work-company-desc">A nimble digital studio focused on product strategy, brand storytelling, and high-impact web experiences for growing teams.</p>
+						</div>
+						<div class="work-item-right">
+							<div class="work-item-top">
+								<p class="work-role">Lead Product Engineer</p>
+								<p class="work-dates">Jan 2023 - Mar 2024</p>
+							</div>
+							<p class="work-detail">Collaborated across design and engineering to launch campaign microsites, improve CMS workflows, and ship polished frontend systems under tight timelines. Helped teams move from idea to launch faster with reusable UI building blocks and clearer technical handoff patterns.</p>
+						</div>
+					</div>
+				</Card>
+				<Card href="#">
+					<div class="work-item">
+						<div class="work-item-left">
+							<h3>New York Times Games</h3>
+							<p class="work-company-desc">Global payments infrastructure powering millions of businesses worldwide. Developer-first design platform handling billions in transactions.</p>
+						</div>
+						<div class="work-item-right">
+							<div class="work-item-top">
+								<p class="work-role">Design Systems</p>
+								<p class="work-dates">Sep 2025 - Present</p>
+							</div>
+							<p class="work-detail">Building components, patterns, and tooling for Sail - Stripe's design system. The work that makes the UI layer hold up across one of the most complex product surfaces on the web.</p>
+						</div>
+					</div>
+				</Card>
+				<Card href="#">
+					<div class="work-item">
+						<div class="work-item-left">
+							<h3>Hearst Digital Media</h3>
+							<p class="work-company-desc">The largest platform for Lottie animations, providing tools and resources for motion designers and developers.</p>
+						</div>
+						<div class="work-item-right">
+							<div class="work-item-top">
+								<p class="work-role">Design Engineer</p>
+								<p class="work-dates">Apr 2024 - Sep 2025</p>
+							</div>
+							<p class="work-detail">Spent a year and a half deep in the dotLottie format - building tooling for animation theming and state-driven interactivity. Enough to end up on stage at Figma Config talking about it.</p>
+						</div>
+					</div>
+				</Card>
+			</div>
+		</section>
+
 		<section id="skills">
 			<div class="container">
-				<SectionHeader label="Skills" title="Skills" />
+				<SectionHeader title="Skills" />
 				<div class="tags">
 					<span class="tag">React</span>
 					<span class="tag">TypeScript</span>
@@ -50,24 +94,6 @@ import SocialLinks from '../components/new/SocialLinks.astro';
 					<span class="tag">PostgreSQL</span>
 					<span class="tag">Storybook</span>
 				</div>
-			</div>
-		</section>
-
-		<section id="work">
-			<div class="container">
-				<SectionHeader label="Work" title="Where I've Worked" />
-				<Card href="/portfolio/nyt/" title="New York Times Games">
-					<div class="description">Selected work on NYT Games experiences.</div>
-					<div style="margin-top: 20px;">
-						<Image src={nytWork} alt="New York Times Games projects" />
-					</div>
-				</Card>
-				<Card href="/portfolio/hearst/" title="Hearst Digital Media">
-					<div class="description">Selected work across Hearst Digital Media properties.</div>
-					<div style="margin-top: 20px;">
-						<Image src={hearstWork} alt="Hearst Digital Media projects" />
-					</div>
-				</Card>
 			</div>
 		</section>
 
