@@ -1,16 +1,9 @@
 ---
 import NewLayout from '../layouts/NewLayout.astro';
-import { Image } from 'astro:assets';
-import me from '../../public/me.png';
-import remoteLA from '../../public/remote-la.png';
-import pt from '../../public/pt.png';
-import fabfixe from '../../public/fabfixe.png';
-import future from '../../public/future.png';
 import CanvasBackground from '../components/new/CanvasBackground.astro';
 import Navbar from '../components/new/Navbar.astro';
 import Hero from '../components/new/Hero.astro';
 import SectionHeader from '../components/new/SectionHeader.astro';
-import Card from '../components/new/Card.astro';
 import SocialLinks from '../components/new/SocialLinks.astro';
 ---
 
@@ -20,9 +13,14 @@ import SocialLinks from '../components/new/SocialLinks.astro';
 		<Navbar />
 		
 		<Hero
-			greeting="Hi, I'm Carron."
-			title="I'm a senior full-stack developer and solutions architect."
-			description="I have been sharing my need for speed since 1998 when I started hacking on the internet. I help businesses build elegant, robust and scalable software with the best tools."
+			greetingBefore="Hi, I'm"
+			greetingHighlight="Carron!"
+			title="I build exceptional experiences for users and developers alike."
+			descriptionBefore="I'm a T-shaped software engineer with deep expertise in web applications and a broad foundation across "
+			descriptionHighlight="product design, design systems, and developer tooling"
+			descriptionAfter=". My favorite projects start with curiosity—understanding how people work, then turning those insights into software that empowers everyone to do their best work."
+			bullets={['Based in New Orleans']}
+			showPoweredByOkra
 			ctaHref="#work"
 			ctaText="View My Work"
 		/>
@@ -30,36 +28,36 @@ import SocialLinks from '../components/new/SocialLinks.astro';
 		<section id="work">
 			<div class="container">
 				<SectionHeader label="Work" title="Where I've Worked" />
-				<Card href="#">
+				<div class="card">
 					<div class="work-item">
 						<div class="work-item-left">
 							<h3>Mighty Acorn Digital</h3>
-							<p class="work-company-desc">A nimble digital studio focused on product strategy, brand storytelling, and high-impact web experiences for growing teams.</p>
+							<p class="work-company-desc">A digital consultancy that modernizes complex government benefit programs—stabilizing, automating, and accelerating delivery without disrupting live services.</p>
 						</div>
 						<div class="work-item-right">
 							<div class="work-item-top">
-								<p class="work-role">Lead Product Engineer</p>
-								<p class="work-dates">Jan 2023 - Mar 2024</p>
+								<p class="work-role">Lead Software Engineer</p>
+								<p class="work-dates">Apr 2025 - Present</p>
 							</div>
-							<p class="work-detail">Collaborated across design and engineering to launch campaign microsites, improve CMS workflows, and ship polished frontend systems under tight timelines. Helped teams move from idea to launch faster with reusable UI building blocks and clearer technical handoff patterns.</p>
+							<p class="work-detail">Built a Next.js/TypeScript educator certification portal for the Massachusetts Department of Early Education and Care, shipping data models, multi-step validated forms, and API integrations. Owned USWDS design-system theming and launched <a href="https://github.com/bcrebel/uswds-intellisense" class="work-link" target="_blank" rel="noopener noreferrer"><span class="link-text">USWDS IntelliSense</span><svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>, a VS Code extension surfacing utility classes and tokens.</p>
 						</div>
 					</div>
-				</Card>
-				<Card href="#">
+				</div>
+				<div class="card">
 					<div class="work-item work-item-nyt">
 						<div class="work-item-left">
 							<h3>New York Times Games</h3>
-							<p class="work-company-desc">Global payments infrastructure powering millions of businesses worldwide. Developer-first design platform handling billions in transactions.</p>
+							<p class="work-company-desc">The New York Times' games studio behind Wordle, Spelling Bee, and The Crossword - daily puzzles played by millions of subscribers.</p>
 						</div>
 						<div class="work-item-right">
 							<div class="work-item-top">
-								<p class="work-role">Design Systems</p>
-								<p class="work-dates">Sep 2025 - Present</p>
+								<p class="work-role">Senior Software Engineer</p>
+								<p class="work-dates">Jul 2018 - Apr 2024</p>
 							</div>
-							<p class="work-detail">Building components, patterns, and tooling for Sail - Stripe's design system. The work that makes the UI layer hold up across one of the most complex product surfaces on the web.</p>
+							<p class="work-detail">Prototyped browser games in Vanilla JS and HTML Canvas, then productionized them in React with shared components, state management, and editor tooling. Ran cross-functional A/B tests that drove significant gains in registration and subscriptions.</p>
 						</div>
 					</div>
-					<div class="nyt-hover-popover" aria-hidden="true">
+					<div class="nyt-carousel">
 						<div class="nyt-hover-viewport">
 							<div class="nyt-hover-track">
 								<span class="nyt-slide-frame nyt-slide-leaderboard nyt-slide-leaderboard-1">
@@ -99,72 +97,21 @@ import SocialLinks from '../components/new/SocialLinks.astro';
 							</div>
 						</div>
 					</div>
-				</Card>
-				<Card href="#">
+				</div>
+				<div class="card">
 					<div class="work-item">
 						<div class="work-item-left">
 							<h3>Hearst Digital Media</h3>
-							<p class="work-company-desc">The largest platform for Lottie animations, providing tools and resources for motion designers and developers.</p>
+							<p class="work-company-desc">A global media company publishing dozens of magazine brands across web and mobile, from Cosmopolitan to Esquire.</p>
 						</div>
 						<div class="work-item-right">
 							<div class="work-item-top">
-								<p class="work-role">Design Engineer</p>
-								<p class="work-dates">Apr 2024 - Sep 2025</p>
+								<p class="work-role">Product Designer</p>
+								<p class="work-dates">Jul 2015 - May 2018</p>
 							</div>
-							<p class="work-detail">Spent a year and a half deep in the dotLottie format - building tooling for animation theming and state-driven interactivity. Enough to end up on stage at Figma Config talking about it.</p>
+							<p class="work-detail">Adapted style guides across multiple brands, refining layout, typography, and visual hierarchy. Defined user flows and motion with Sass, HTML/Twig, and Sketch, and built ES6 and Node.js tools to streamline and automate team workflows.</p>
 						</div>
 					</div>
-				</Card>
-			</div>
-		</section>
-
-		<section id="skills">
-			<div class="container">
-				<SectionHeader title="Skills" />
-				<div class="tags">
-					<span class="tag">React</span>
-					<span class="tag">TypeScript</span>
-					<span class="tag">Node.js</span>
-					<span class="tag">Express.js</span>
-					<span class="tag">GraphQL</span>
-					<span class="tag">Next.js</span>
-					<span class="tag">Sass</span>
-					<span class="tag">TailwindCSS</span>
-					<span class="tag">MongoDB</span>
-					<span class="tag">PostgreSQL</span>
-					<span class="tag">Storybook</span>
-				</div>
-			</div>
-		</section>
-
-		<section id="projects">
-			<div class="container">
-				<SectionHeader label="Projects" title="Personal Projects & Experiments" />
-				<div class="grid-2">
-					<Card href="/portfolio/future" title="Future">
-						<div class="description">An experiment exploring future-focused product concepts.</div>
-						<div style="margin-top: 20px;">
-							<Image src={future} alt="Future screenshot" />
-						</div>
-					</Card>
-					<Card href="/portfolio/remote/" title="Remote from Louisiana">
-						<div class="description">Remote community and resources from Louisiana.</div>
-						<div style="margin-top: 20px;">
-							<Image src={remoteLA} alt="Remote LA" />
-						</div>
-					</Card>
-					<Card href="/portfolio/fabfixe/" title="Fabfixe">
-						<div class="description">A small product experiment and brand concept.</div>
-						<div style="margin-top: 20px;">
-							<Image src={fabfixe} alt="FabFixe" />
-						</div>
-					</Card>
-					<Card href="/portfolio/pt/" title="PrettyTendr">
-						<div class="description">Visual design and prototyping explorations.</div>
-						<div style="margin-top: 20px;">
-							<Image src={pt} alt="PrettyTendr" />
-						</div>
-					</Card>
 				</div>
 			</div>
 		</section>
@@ -182,9 +129,5 @@ import SocialLinks from '../components/new/SocialLinks.astro';
 				/>
 			</div>
 		</section>
-
-		<footer>
-			<div class="container">Designed & developed with intention © 2025</div>
-		</footer>
 	</div>
 </NewLayout>
