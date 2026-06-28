@@ -1,0 +1,66 @@
+---
+interface Props {
+	greeting?: string;
+	greetingBefore?: string;
+	greetingHighlight?: string;
+	title?: string;
+	description?: string;
+	descriptionBefore?: string;
+	descriptionHighlight?: string;
+	descriptionAfter?: string;
+	bullets?: string[];
+	showPoweredByOkra?: boolean;
+	ctaHref?: string;
+	ctaText?: string;
+}
+const {
+	greeting = "Hi, I'm Carron.",
+	greetingBefore,
+	greetingHighlight,
+	title = "I don't just build products—I improve how they're built.",
+	description = "I have been sharing my need for speed since 1998 when I started hacking on the internet. I help businesses build elegant, robust and scalable software with the best tools.",
+	descriptionBefore,
+	descriptionHighlight,
+	descriptionAfter,
+	bullets = [],
+	showPoweredByOkra = false,
+	ctaHref = '#projects',
+	ctaText = 'View My Work',
+}: Props = Astro.props;
+
+---
+
+<div class="hero">
+	<div class="hero-content container">
+		<p class="hero-greeting">
+			{greetingBefore && greetingHighlight ? (
+				<>{greetingBefore}{' '}{greetingHighlight}</>
+			) : (
+				greeting
+			)}
+		</p>
+		<h1>{title}</h1>
+		<div class="hero-description">
+			<p>
+				{descriptionBefore && descriptionHighlight && descriptionAfter ? (
+					<>
+						{descriptionBefore}
+						<span class="hero-gradient-text">{descriptionHighlight}</span>
+						{descriptionAfter}
+					</>
+				) : (
+					description
+				)}
+				{bullets.map((item) => (
+					<> {' '}{item}.</>
+				))}
+				{showPoweredByOkra && (
+					<> <strong class="hero-powered-by-okra">Powered by okra.</strong></>
+				)}
+			</p>
+		</div>
+		{ctaText && (
+			<a href={ctaHref} class="hero-cta">{ctaText}</a>
+		)}
+	</div>
+</div>

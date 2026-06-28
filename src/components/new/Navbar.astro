@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import me from '../../../public/me.png';
+
+export interface LinkItem {
+	label: string;
+	href: string;
+}
+const { links = [
+	{ label: 'Work', href: '#work' },
+	{ label: 'Connect', href: '#connect' },
+] }: { links?: LinkItem[] } = Astro.props;
+---
+
+<nav>
+	<div class="container">
+		<a href="/portfolio" class="logo">
+			<Image src={me} alt="Carron White" />
+		</a>
+		<ul>
+			{links.map((link) => (
+				<li><a href={link.href}>{link.label}</a></li>
+			))}
+		</ul>
+	</div>
+	</nav>
+
+
